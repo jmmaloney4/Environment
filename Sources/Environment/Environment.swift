@@ -49,7 +49,6 @@ public struct Environment {
 
             let pairString = String(cString: cpair)
             let pair = pairString
-                .characters
                 .split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false)
                 .map(String.init)
 
