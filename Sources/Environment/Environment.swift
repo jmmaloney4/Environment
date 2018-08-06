@@ -42,7 +42,7 @@ public struct Environment {
     /// Returns the dictionary of all environment variables, keyed by their name.
     /// Note that some values might be empty strings, as that is valid in the environment.
     public func all() -> [String: String] {
-        var env = environ
+        var env = CEnvironment.environ
         var pairs: [String: String] = [:]
         while let cpair = env?.pointee {
             defer { env = env?.successor() }
